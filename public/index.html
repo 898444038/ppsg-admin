@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" type="text/css" href="<%= BASE_URL %>loader.css">
+    <link rel="stylesheet" type="text/css" href="/live2d/waifu.css"/>
+    <title>啪啪三国</title>
+    <style>
+      ::-webkit-scrollbar {/*滚动条整体样式*/
+        width: 8px;     /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+      }
+
+      ::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+        border-radius: 2px;
+        -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+        background: #535353;
+      }
+
+      ::-webkit-scrollbar-track {/*滚动条里面轨道*/
+        border-radius: 2px;
+        -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+        background: #EDEDED;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>啪啪三国</strong>
+    </noscript>
+    <div id="loading-bg">
+      <div class="loading-logo">
+        <img src="<%= BASE_URL %>logo.png" alt="Logo">
+      </div>
+      <div class="loading">
+        <div class="effect-1 effects"></div>
+        <div class="effect-2 effects"></div>
+        <div class="effect-3 effects"></div>
+      </div>
+    </div>
+    <div id="app">
+
+    </div>
+    <!-- built files will be auto injected -->
+
+    <div class="waifu" style='z-index:10000'>
+      <div class="waifu-tips"></div>
+      <canvas id="live2d" class="live2d"></canvas>
+      <div class="waifu-tool">
+          <span class="fui-home"></span>
+          <span class="fui-chat"></span>
+          <span class="fui-eye"></span>
+          <span class="fui-user"></span>
+          <span class="fui-photo"></span>
+          <span class="fui-info-circle"></span>
+          <span class="fui-cross"></span>
+      </div>
+    </div>
+  
+    <script src="https://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="https://www.jq22.com/jquery/jquery-ui-1.11.0.css">
+    <script src="/live2d/waifu-tips.js"></script>
+    <script src="/live2d/live2d.js"></script>
+    
+    <script type="text/javascript">
+      live2d_settings['modelId'] = 1;
+      live2d_settings['modelTexturesId'] = 87;
+      live2d_settings['waifuDraggable'] = 'unlimited';
+      initModel("/live2d/waifu-tips.json")
+    </script>
+  </body>
+</html>
